@@ -21,19 +21,19 @@ features <- read.table("UCI HAR Dataset/features.txt")
 features[,2] <- as.character(features[,2])
 
 #Extracts the mean and standard deviation from the features data
-featuresWanted <- grep(".*mean.*|.*std.*", features[,2])
-featuresWanted.names <- features[featuresWanted,2]
-featuresWanted.names = gsub('-mean', 'Mean', featuresWanted.names)
-featuresWanted.names = gsub('-std', 'Std', featuresWanted.names)
-featuresWanted.names <- gsub('[-()]', '', featuresWanted.names)
+wantedFeatures <- grep(".*mean.*|.*std.*", features[,2])
+wantedFeatures.names <- features[wantedFeatures,2]
+wantedFeatures.names = gsub('-mean', 'Mean', wantedFeatures.names)
+wantedFeatures.names = gsub('-std', 'Std', wantedFeatures.names)
+wantedFeatures.names <- gsub('[-()]', '', wantedFeatures.names)
 
 
 #Loads the datasets into memory
-train <- read.table("UCI HAR Dataset/train/X_train.txt")[featuresWanted]
+train <- read.table("UCI HAR Dataset/train/X_train.txt")[wantedFeatures]
 trainActivities <- read.table("UCI HAR Dataset/train/Y_train.txt")
 trainSubjects <- read.table("UCI HAR Dataset/train/subject_train.txt")
 train <- cbind(trainSubjects, trainActivities, train)
-test <- read.table("UCI HAR Dataset/test/X_test.txt")[featuresWanted]
+test <- read.table("UCI HAR Dataset/test/X_test.txt")[wantedFeatures]
 testActivities <- read.table("UCI HAR Dataset/test/Y_test.txt")
 testSubjects <- read.table("UCI HAR Dataset/test/subject_test.txt")
 test <- cbind(testSubjects, testActivities, test)
