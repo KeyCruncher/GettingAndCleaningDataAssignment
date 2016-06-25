@@ -14,7 +14,7 @@ if (!file.exists("UCI HAR Dataset"))
   unzip(fileName) 
 }
 
-#Loads activity labels and features from the text files
+#Loads activity labels and features from the files
 actLabels <- read.table("UCI HAR Dataset/activity_labels.txt")
 actLabels[,2] <- as.character(actLabels[,2])
 features <- read.table("UCI HAR Dataset/features.txt")
