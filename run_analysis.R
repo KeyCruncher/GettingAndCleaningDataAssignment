@@ -1,5 +1,5 @@
 # Loads the needed libraries
-library(reshape2)
+library(reshape2) # Source of the melt() function, which is needed later
 
 # Sets the file name
 fileName <- "getdata_dataset.zip"
