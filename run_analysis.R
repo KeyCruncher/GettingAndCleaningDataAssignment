@@ -42,7 +42,7 @@ test <- cbind(testSubjects, testActivities, test)
 
 # Merges datasets and adds labels
 all <- rbind(train, test)
-colnames(allData) <- c("subject", "activity", wantedFeatures.names)
+colnames(all) <- c("subject", "activity", wantedFeatures.names)
 
 # Turns activities and subjects into factors
 all$activity <- factor(all$activity, levels = actLabels[,1], labels = actLabels[,2])
