@@ -1,5 +1,9 @@
 # Getting and Cleaning Data Assignment
 
+Data description: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+Data source: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
 This is the Cousera getting and cleaning data course project. The R script, run_analysis.R, executes the following actions:
 
 1. Downloads the dataset if it does already exsist in the working directory
